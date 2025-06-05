@@ -1,4 +1,4 @@
-package com.example.OnlineStoreProject.models;
+package com.example.OnlineStoreProject.models.enums;
 
 
 public enum Category {

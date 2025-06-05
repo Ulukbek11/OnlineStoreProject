@@ -1,7 +1,7 @@
-package com.example.OnlineStoreProject.models;
+package com.example.OnlineStoreProject.models.enums;
 
 public enum Role {
-    ROLE_USER, ROLE_ADMIN
+    USER, ADMIN
 
 
 }

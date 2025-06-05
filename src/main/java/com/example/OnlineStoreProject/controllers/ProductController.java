@@ -1,11 +1,9 @@
 package com.example.OnlineStoreProject.controllers;
 
 import com.example.OnlineStoreProject.models.Product;
-import com.example.OnlineStoreProject.models.UpdateProductCommand;
 import com.example.OnlineStoreProject.services.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,24 +28,29 @@ public class ProductController {
         return productService.searchByName(name);
     }
 
+    @GetMapping("/category")
+    public ResponseEntity<List<Product>> getByCategory(@RequestParam String category) {
+        return productService.getByCategory(category);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable Long id) {
         return productService.get(id);
     }
 
-    @PostMapping("/add")
+    @PostMapping
     public ResponseEntity<String> createProduct(@RequestBody @Valid Product product) {
         return productService.add(product);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable Long id) {
         return productService.delete(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id,
-                                                @RequestBody Product product) {
+                                                @RequestBody @Valid Product product) {
         return productService.update(id, product);
     }
 }

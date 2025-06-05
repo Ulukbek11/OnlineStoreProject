@@ -1,4 +1,4 @@
-package com.example.OnlineStoreProject.models;
+package com.example.OnlineStoreProject.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

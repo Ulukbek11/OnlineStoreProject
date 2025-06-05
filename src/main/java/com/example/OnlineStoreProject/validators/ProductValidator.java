@@ -2,7 +2,9 @@ package com.example.OnlineStoreProject.validators;
 
 import com.example.OnlineStoreProject.exceptions.ProductNotValidException;
 import com.example.OnlineStoreProject.models.Product;
+import org.springframework.validation.annotation.Validated;
 
+@Validated
 public class ProductValidator {
 
     public static void validate(Product product) {
